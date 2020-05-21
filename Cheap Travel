@@ -1,0 +1,16 @@
+l=list(map(int,input().strip().split()))
+n=l[0]
+arr=[]
+rides=l[1]
+one=l[2]
+multi=l[3]
+a=n//rides
+b=n%rides
+price=a*multi+b*one
+if b!=0:
+    rate=multi*(a+1)
+    arr.append(rate)
+count=n*one
+arr.append(count)
+arr.append(price)
+print(min(arr))

@@ -1,0 +1,11 @@
+a=int(input())
+b=int(input())
+c=int(input())
+m=0
+m=max(m,(a+b+c))
+m=max(m,((a+b)*c))
+m=max(m,((a*b)+c))
+m=max(m,(a*b*c))
+m=max(m,(a*(b+c)))
+m=max(m,((a+b)*c))
+print(m)

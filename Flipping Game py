@@ -1,0 +1,30 @@
+#THIS IS N**3 APPROACH IT CAN BE DONE BY O(N) BY USING DP....AS THESE SOLUTIONS ARE MAINLY DEDICATED TO BEGINNERS SO I AM NOT USING DP
+
+
+
+n=int(input())
+l=list(map(int,input().strip().split()))
+m=0
+if l.count(0)==0:
+    print(n-1)
+elif l.count(0)==1:
+    print(1)
+else:
+    for i in range(n-1):
+            d=l[0:i]      # for counting the no of ones in the list that is left behind as required by test case 2
+            s=0
+            c=0
+            for j in range(i+1,n):
+                e=l[j+1:]                 #for counting the no. of ones in the list which is not acessed in this cycle 
+                a=l[i:j+1]
+                s=a.count(1)+d.count(1)+e.count(1)
+                for k in range(len(a)):
+                        if a[k]==0:
+                            a[k]=1
+                        else:
+                            a[k]=0
+
+                c=a.count(1)+d.count(1)+e.count(1)
+                m=max(s,c,m)
+
+    print(m)
